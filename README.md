@@ -108,7 +108,7 @@ It is no recommended to have commented code. It's better to use a VCS and remove
 Use getters and setters to access data on Objects
 ```java
 public class Card {
-	
+
 	String suit;
 	String rank;
 
@@ -124,7 +124,7 @@ public class Card {
 	public String getRank() {
 		return rank;
 	}
-	
+
 	public void setSuit(String suit) {
 		this.suit = suit;
 	}
@@ -138,11 +138,26 @@ public class Card {
 Not using getters and setters makes data access complicated. 
 
 ### 5) Tests
+Tests are important in the code to garantee that the functionality of each piece is working after changes in the code. 
 #### Good practice
+```java
+ @Test
+public LinkedList<Card> dealTest() {
+	LinkedList<Card> hand = new LinkedList<>();
+
+	for (int i = 0; i < 5; i++) {
+		hand.add(deck.getLast());
+		deck.removeLast();
+	}
+
+	return hand;
+}
+```
 #### Bad practice
+It's not recommended not having unit tests. There should be at least one test for each function and class in a project. 
 
 ### 6) SOLID
-Single responsibility principle.
+Single responsibility principle example.
 #### Good practice
 Regarding the single responsibility principle, it's important to keep classes with minimal functionality. An example of this is the ***Card.java*** class
 #### Bad practice
@@ -150,7 +165,14 @@ In the other hand, ***Player.java*** class has more than one responsibility. It 
 
 ### 7) Error handling
 #### Good practice
+It's important to handle errors in the code to be able fix them in the future in case they happen. 
+
 #### Bad practice
+In the code below ***bet*** variable is expecting an Integer value from the user. But it's possible that the user may enter a different data type and throw a runtime exception. 
+```java
+System.out.println("\n"+players.getFirst().getName() + ", Enter your bet: ");
+int bet = input.nextInt();
+```
 
 ### 8) Formatting
 Formatting is subjective. Like many rules herein, there is no hard and fast rule that you must follow.
