@@ -4,7 +4,6 @@ import java.util.LinkedList;
 import java.util.List;
 
 public class Player {
-	
 	String name;
 	int score;
 	int money;
@@ -123,8 +122,8 @@ public class Player {
 	public void sortHand() {
 		Collections.sort(hand, new Comparator<Card>() {
 		    @Override
-		    public int compare(Card a1, Card a2) {
-		        return (a1.rank() - a2.rank());
+		    public int compare(Card card1, Card card2) {
+		        return (card1.rank() - card2.rank());
 		    }
 		});
 	}
@@ -147,8 +146,8 @@ public class Player {
 			(ranks.contains("10")) && isSameSuit()) {
 			return true;
 		}
-		else
-			return false;
+
+		return false;
 	}
 	
 	/**
@@ -185,8 +184,7 @@ public class Player {
 			setHighCard(first);
 			return true;
 		}
-		else
-			return false;
+		else return false;
 	}
 	
 	/**
@@ -210,8 +208,7 @@ public class Player {
 			setMainCard2(first);
 			return true;
 		}
-		else
-			return false;
+		else return false;
 	}
 	
 	/**
@@ -223,8 +220,7 @@ public class Player {
 			setMainCard(getHand().getLast());
 			return true;
 		}
-		else 
-			return false;
+		else return false;
 	}
 	
 	/**
@@ -236,7 +232,6 @@ public class Player {
 			if((getHand().get(i).rank()+1) != getHand().get(i+1).rank())
 				return false;
 		}
-		
 		return true;
 	}
 	
@@ -266,8 +261,7 @@ public class Player {
 			setHighCard(second);
 			return true;
 		}
-		else
-			return false;
+		else return false;
 	}
 	
 	/**
@@ -299,8 +293,7 @@ public class Player {
 			setHighCard(first);
 			return true;
 		}
-		else
-			return false;
+		else return false;
 	}
 	
 	/**
@@ -334,8 +327,7 @@ public class Player {
 			setHighCard(third);
 			return true;
 		}
-		else
-			return false;	
+		else return false;
 	}
 	
 	/**
