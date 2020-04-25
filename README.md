@@ -149,7 +149,8 @@ public LinkedList<Card> dealTest() {
 		hand.add(deck.getLast());
 		deck.removeLast();
 	}
-
+ 	
+	assertTrue(hand.size = 4);
 	return hand;
 }
 ```
